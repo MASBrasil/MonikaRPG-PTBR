@@ -24,5 +24,5 @@ This is my first submod... hope you guys enjoy!
 ## Installation:
 - Fully extract the release .zip file.
 - Merge the 'game' file with your DDLC /game directory. If this is your first time installing a submod, you should enter your /game directory and create a new 'Submods' folder.
-- For the best experience, it is recommended that you also install the 'All Gen Scrollable Menus' submod. You can install it from [https://github.com/multimokia/MAS-Submod-consistent-menus](url)
-- This mod uses the 'Submod Updater Plugin'! To automatically get new updates for MonikaRPG, please install the plugin at [https://github.com/Booplicate/MAS-Submods-SubmodUpdaterPlugin](url)
+- For the best experience, it is recommended that you also install the 'All Gen Scrollable Menus' submod. You can install it from https://github.com/multimokia/MAS-Submod-consistent-menus
+- This mod uses the 'Submod Updater Plugin'! To automatically get new updates for MonikaRPG, please install the plugin at https://github.com/Booplicate/MAS-Submods-SubmodUpdaterPlugin
