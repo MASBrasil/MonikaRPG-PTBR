@@ -31,7 +31,7 @@ label rpg_game_unlock:
     $ mas_unlockGame("MonikaRPG")
     return
 
-# initialize game
+# Initialize game
 init 5 python:
     addEvent(
         Event(
@@ -50,7 +50,7 @@ label rpg_start:
     m 2dsa "Okay..."
     m 1efa "I accept your challenge!"
     m 3efd "But I must warn you..."
-    m 3efw "Those who go against me get deleted."
+    m 4efw "Those who go against me get deleted."
     m 1hua "Hehe~"
 
     if persistent._monikarpg_first_time:
@@ -65,6 +65,128 @@ label rpg_start:
         "No":
             jump rpg_setup
 
+# Main body of tutorial
+label rpg_tutorial:
+    m 3esa "Here is the list of rules. Which topic would you like to visit?"
+    menu:
+        "General":
+            m 3sub "Time for us to finally face off! Welcome to MonikaRPG!"
+            m 6esd "MonikaRPG is turn-based, so after every action you make, it'll be my turn to retaliate."
+            m 7ksa "There are plenty of intricate mechanics to allow for diverse strategies, so be sure to explore the rest of this tutorial!"
+            jump rpg_tutorial
+
+        "Mechanics":
+            jump rpg_tutorial_mechanics
+
+        "Actions":
+            jump rpg_tutorial_actions
+
+        "I'm ready.":
+            jump rpg_setup
+
+# Sub function for tutorial mechanics
+label rpg_tutorial_mechanics:
+    menu:
+                "HP":
+                    m 6esd "You'll start with 100 HP."
+                    m 7esc "If you try to heal, you cannot heal over this amount." 
+                    m 1esa "If your HP drops to 0, you lose!"
+                    jump rpg_tutorial_mechanics
+
+                "Mana":
+                    m 6esd "Mana is the key resource for casting Spells!"
+                    m 4esc "Every time your turn begins, you'll regenerate some mana. At low health, you regenerate even more mana."
+                    m 7lksdla "However, human vessels are not meant to store large amounts of mana, so there is a cap at 100. You'll stop regenerating mana once you hit this cap."
+                    jump rpg_tutorial_mechanics
+
+                "RNG":
+                    m 3esd "Most actions you or I can take will be influenced by RNG."
+                    m 4wud "That means sometimes, the numbers to your actions can be amazingly high, or disappointingly low. It's the same for my actions."
+                    m 7lksdla "However, there are reasonable minimums, since I know how frustrating it is when your move seems to do barely anything."
+                    m 4esb "But don't be too discourages by that!"
+                    m 5tsu "After all... what's a good RPG without some RNG?"
+                    jump rpg_tutorial_mechanics
+
+                "Difficulties":
+                    m 3eua "To give you an experience ranging from casual to challenging, I created difficulties!"
+                    m 4eub "The harder the difficulty, the more HP I'll start with, the more damage I'll do, and the less likely I'll miss."
+                    m 7tfa "I'd love to see you beat Impossible~"
+                    jump rpg_tutorial_mechanics
+
+                "Back to rules":
+                    jump rpg_tutorial
+
+# Sub function for tutorial actions
+label rpg_tutorial_actions:
+    menu:
+                "Attack":
+                    m 7esb "This is your basic attack! You can use this action without restriction."
+                    jump rpg_tutorial_actions
+
+                "Parry":
+                    m 3esa "This action has a chance to reflect an attack from me!"
+                    m 4tsb "If you successfully reflect, I will take damage, and your turn is preserved. You'll regenerate some mana with a successful parry."
+                    m 4esa "Your chances of parrying increases with your Evasion Bonus!"
+                    jump rpg_tutorial_actions
+
+                "Heal":
+                    m 1hua "I gave you some health potions to use in a pinch! You can use these to restore some HP."
+                    m 5tublb "Aren't I such a nice girlfriend~"
+                    jump rpg_tutorial_actions
+
+                "Spell":
+                    m 3sub "You can consume Mana to activate spells! Each spell is unique and have their own effects."
+                    m 4esa "Which spell would you like to check out?"
+                    jump rpg_tutorial_spells
+                
+                "Surrender":
+                    m 3esd "If you're running low on time, or if feel that your chances are slim, you can always surrender..."
+                    m 5tsb "...but I'll be taking that as my win!"
+                    jump rpg_tutorial_actions
+
+                "Back to rules":
+                    jump rpg_tutorial
+
+# Sub functions for tutorial spells
+label rpg_tutorial_spells:
+    menu:
+                        "Greater Heal":
+                            m 3esa "This spell costs 30 mana and allows you to heal a ton of HP at once. Afterwards, it creates a lingering field to heal you over time." 
+                            m 4ssb "This is a great alternative for when you run out of heal potions!"
+                            jump rpg_tutorial_spells
+
+                        "Fire Sword":
+                            m 3esa "This spell costs 25 mana and greatly increases your next basic attack!"
+                            m 4gssdrb "And I'm not kidding when I say greatly..."
+                            m 7ksa "Psst, I also heard that this spell was kept as a tribute to \"m-grap,\" who made the first RPG submod!"
+                            jump rpg_tutorial_spells
+
+                        "Freeze":
+                            m 3esa "This spell costs 20 mana and gives you a high chance of freezing me."
+                            m 5lssdrp "When frozen, I can't take any actions... but I'll thaw after a few turns."
+                            jump rpg_tutorial_spells
+
+
+                        "Fireball":
+                            m 3esa "This spell costs 15 mana and deals instant damage, while having a small chance of setting me on fire."
+                            m 5lssdrp "When on fire, I'll take damage over time, but the flames will die out in a few turns."
+                            jump rpg_tutorial_spells
+
+                        "Swift":
+                            m 3esa "This spell costs 15 mana and makes you faster!"
+                            m 7est "And by making you faster, I mean by greatly increasing your Evasion Bonus."
+                            m 3ssb "Evasion Bonus makes it more likely for you to parry... "
+                            m 5lssdrp "...or more likely for me to miss an attack."
+                            jump rpg_tutorial_spells
+
+                        "Protect":
+                            m 3esa "This spell costs 15 mana and greatly reduces all incoming damage!"
+                            m 7esb "However, it will wear off after a few turns, so you'll probabily want to pay attention to the remaining duration."
+                            jump rpg_tutorial_spells
+
+                        "Back to rules":
+                            jump rpg_tutorial
+
 # Setup for battle!
 label rpg_setup:
 
@@ -73,9 +195,9 @@ label rpg_setup:
     "Choose your difficulty."
     menu:
         "Easy":
-            $ mhpmax = 1000
-            $ m_diff = 0.90
-            $ m_hitrate = 80
+            $ mhpmax = 1000 # Max Monika HP
+            $ m_diff = 0.90 # Monika's difficulty multiplier (used to calculate damage)
+            $ m_hitrate = 80 # Monika's hitrate (Ex. 80% chance to land a hit on you)
         "Normal":
             $ mhpmax = 1250
             $ m_diff = 1
@@ -88,40 +210,41 @@ label rpg_setup:
             $ mhpmax = 2000
             $ m_diff = 1.25
             $ m_hitrate = 95
-    $ mhp = mhpmax
-    $ php = 100
-    $ potions = 10
-    $ protect = 1
-    $ protect_turn = 0
-    $ mana = 0
-    $ atk_buff = 0
-    $ phase2 = 0
-    $ burn_turn = 0
-    $ burn = 0
-    $ freeze_turn = 0
-    $ swift_turn = 0
-    $ swift = 0
-    $ heal_turn = 0
+    $ mhp = mhpmax # Monika's current HP
+    $ php = 100 # Player HP
+    $ potions = 10 # Health potions count
+    $ protect = 1 # Multiplier for how much damage for player to take. When protect spell is active, multiplier is less than one. Otherwise, remains 1
+    $ protect_turn = 0 # Turn counter for protect spell activation. 0 when inactive, >0 when active.
+    $ mana = 0 # Player's mana. Cannot surpass 100.
+    $ atk_buff = 0 # Currently used for Fire Sword's bonus damage. Might give extra uses later.
+    $ phase2 = 0 # Monika's phase 2. 0 when inactive, 10 when active (Also factors into damage calculations)
+    $ burn_turn = 0 # Turn counter for burning status effect. 0 when inactive, >0 when active.
+    $ burn = 0 # Burn damage for Monika to take. Will get randomized while burn is active.
+    $ freeze_turn = 0 # Turn counter for frozen status effect. 0 when inactive, >0 when active.
+    $ swift_turn = 0 # Turn counter for swift buff effect. 0 when inactive, >0 when active.
+    $ swift = 0 # Evasion Bonus to grant. Will get randomized while active.
+    $ heal_turn = 0 # Turn counter for lingering heals buff effect. 0 when inactive, >0 when active.
     "Your turn."
     jump rpg_menu
 
 # main menu for actions you can take
 label rpg_menu:
 
-    $ mana = mana + random.randrange(3,9)
+    $ mana = mana + random.randrange(3,9) # Regen Mana. Bonus mana regened if at low health.
     if php <= 30:
         "You're at critical health!"
         $ mana = mana + random.randrange(2,5)
-    elif php <= 50:
+    elif php <= 55:
         "You are stressed."
         $ mana = mana + random.randrange(1,3)
     if mana >= 100:
         $ mana = 100
         "Your mana is full!"
+
     menu:
         "Attack ([m_name]'s HP: [mhp])":
             $ attack = random.randrange(15,51) + atk_buff
-            #$ attack = 800 # FOR DEBUGGING PURPOSES
+            # $ attack = 800 # FOR DEBUGGING PURPOSES AND QUICK SKIPPING TESTING
             m 1wud "{nw}"
             "You dealt [attack] damage."
             $ mhp = mhp - attack
@@ -168,7 +291,7 @@ label rpg_menu:
                 m 1ekc "Don't be too discouraged."
                 m 3eka "You must keep practicing if you want beat me!"
                 m 1gka "Well... Maybe next time."
-                $ mas_gainAffection(0.25,m_diff+0.1,False)
+                $ mas_gainAffection(0.1,m_diff+0.1,False)
             $ play_song(persistent.current_track)
             return
 
@@ -215,15 +338,6 @@ label choose_spell:
                 "You don't have enough Mana."
                 jump rpg_menu
 
-        "Swift (Cost: 15 Mana)":
-            if mana >= 15:
-                "You cast a buff on yourself. Your evasion increased!"
-                $ swift_turn = 4
-                $ mana = mana - 15
-                jump rpg_monika
-            else:
-                "You don't have enough Mana."
-                jump rpg_menu
 
         "Fireball (Cost: 15 Mana)":
             if mana >= 15:
@@ -234,6 +348,16 @@ label choose_spell:
                 if burn_chance <= 25:
                     "[m_name] is set ablaze!"
                     $ burn_turn = 5
+                jump rpg_monika
+            else:
+                "You don't have enough Mana."
+                jump rpg_menu
+
+        "Swift (Cost: 15 Mana)":
+            if mana >= 15:
+                "You cast a buff on yourself. Your evasion increased!"
+                $ swift_turn = 4
+                $ mana = mana - 15
                 jump rpg_monika
             else:
                 "You don't have enough Mana."
@@ -276,11 +400,11 @@ label rpg_heal_sequence:
             "[m_name] healed [heal_amt] hp!"
             m 6tko "Wait... you used a health potion on me?"
             m 5tubla "How sweet of you~"
-            m 4efd "But this doesn't help your chances of winning!"
+            m 4eud "But this doesn't help your chances of winning!"
             $ mas_gainAffection(0.0125,m_diff+0.1,False)
             jump rpg_monika
 
-# Boop? Boop!
+# Boop? Boop! (Game instantly ends tho)
 label rpg_boop_sequence:
     menu:
         "What's this?":
@@ -293,7 +417,6 @@ label rpg_boop_sequence:
                     m 1hublb "Hahaha~"
                     m 4tublu "I think you found my weakness."
                     m 5fubfa "I love you~"
-                    $ mas_gainAffection(0.15,1,False)
                     return "love"
 
                 "Cancel Cast? (Current Mana: [mana])":
@@ -305,14 +428,15 @@ label rpg_boop_sequence:
 # Monika's turn! And logic for status effects that should happen during her turn.
 label rpg_monika:
     "[m_name]'s turn."
+    # Different status effect messages to change and check for.
     if protect_turn > 0:
         "You are shielding yourself. Your shield will wear off in [protect_turn] turn(s)."
-        $ protect = (float)(random.randrange(1,4))/8.0
+        $ protect = (float)(random.randrange(1,4))/7.5
         $ protect_turn = protect_turn - 1
     else:
         $ protect = 1
     if heal_turn > 0:
-        $ heal_amt = random.randrange(10,16)
+        $ heal_amt = random.randrange(8,13)
         "You feel traces of healing. You heal [heal_amt] hp. The lingering traces will end in [heal_turn] turn(s)."
         $ php = php + heal_amt
         if php > 100:
@@ -320,7 +444,7 @@ label rpg_monika:
         $ heal_turn = heal_turn - 1
     if swift_turn > 0:
         "You feel fast. Your swiftness will end in [swift_turn] turn(s)."
-        $ swift = random.randrange(10,26)
+        $ swift = random.randrange(15,31)
         $ swift_turn = swift_turn - 1
     else:
         $ swift = 0
@@ -331,11 +455,14 @@ label rpg_monika:
         "[m_name] will stop burning in [burn_turn] turn(s)."
         $ burn_turn = burn_turn-1
         $ mhp = mhp-burn
+
+    # Sandwiched between to make sure phase 2 and win triggers properly, even if frozen.
     if mhp <= mhpmax*0.4 and phase2 == 0:
         jump rpg_monika_phase2
     if mhp <= 0:
         jump rpg_win
     
+    # Freeze condition below to ensure proper flow.
     if freeze_turn > 0:
         m 6wud "{nw}"
         "[m_name] is frozen!" 
@@ -361,7 +488,7 @@ label rpg_monika_attack:
     m 1efa "{nw}"
     $ ran_miss = random.randrange(0,100)
     if (m_hitrate - swift) > ran_miss:
-        $ mattack = (int)(round((random.randrange(15,30) + phase2) * protect * m_diff))
+        $ mattack = (int)(round((random.randrange(15,35) + phase2) * protect * m_diff))
         "[m_name] deals [mattack] damage."
         $ php = php - mattack
     else:
@@ -381,9 +508,10 @@ label rpg_monika_phase2:
     m 1eusdlc "I think I underestimated you [player]."
     m 1wfa "But we are not finished."
     call mas_change_weather (mas_weather_thunder, by_user=False)
-    m 1wfb "HOW MY BLOOD BOILS!"
+    m 1wfb "MY BLOOD BOILS!"
     m 1wfb "FACE ME{w=1}, [player]!"
     $ phase2 = 10
+    $ m_hitrate = m_hitrate + 5
     if burn_turn > 0 or freeze_turn > 0:
         $ freeze_turn = 0
         $ burn_turn = 0
@@ -404,7 +532,7 @@ label rpg_lose:
     m 7hua "But maybe you will have better luck next time."
     m 5hubla "Hehehe~"
     $ play_song(persistent.current_track)
-    $ mas_gainAffection(0.4,m_diff+0.1,False)
+    $ mas_gainAffection(0.25,m_diff+0.1,False)
     return
 
 # Congrats! You won!
@@ -423,5 +551,5 @@ label rpg_win:
     m 2tsbla "I didn't think you could beat me."
     m 5ekbfa "That was so much fun, [mas_get_player_nickname()]."
     m 5skbfb "Maybe we should fight again sometime."
-    $ mas_gainAffection(1.0,m_diff+0.1,False)
+    $ mas_gainAffection(0.75,m_diff+0.1,False)
     return

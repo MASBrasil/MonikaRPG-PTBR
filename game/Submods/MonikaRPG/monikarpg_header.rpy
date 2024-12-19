@@ -7,7 +7,7 @@ init -990 python:
         author="Icey_Pizza",
         name="MonikaRPG",
         description="Adds a new RPG minigame to the play tab!",
-        version="1.0.0"
+        version="1.0.1"
     )
 
 # Register the updater
