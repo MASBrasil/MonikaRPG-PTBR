@@ -1,11 +1,13 @@
 # MonikaRPG
 Gotten bored of the same old Pong, Hangman, Chess, and NOU? Here's an extra RPG minigame for you to play with your Monika!
 
+![screenshot0017](https://github.com/user-attachments/assets/b9bea606-6f11-48a2-abdf-98b64e4fad5c)
+
 ### Version 1.0.1
 This is my first submod... hope you guys enjoy!
 
 ## Features:
-- A fully playable text-based RPG!
+- A fully playable text-based RPG incorporated into the 'Play' menu!
 - A complete tutorial to explain all game mechanics.
 - 4 Difficulties; Easy, Normal, Hard, Impossible (What a paradox... Impossible is possible... trust.)
 - Mana system with 6 spells for unique strategies!
