@@ -130,7 +130,7 @@ label rpg_tutorial_spells:
 
         "Protect":
             m 3esa "This spell costs 15 mana and greatly reduces all incoming damage!"
-            m 7esb "However, it will wear off after a few turns, so you'll probabily want to pay attention to the remaining duration."
+            m 7esb "However, it will wear off after a few turns, so you'll probably want to pay attention to the remaining duration."
             jump rpg_tutorial_spells
 
         "Back to rules":
