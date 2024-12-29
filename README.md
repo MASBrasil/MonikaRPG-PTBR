@@ -1,10 +1,12 @@
 # MonikaRPG
 Gotten bored of the same old Pong, Hangman, Chess, and NOU? Here's an extra RPG minigame for you to play with your Monika!
+This is my first submod... hope you guys enjoy!
 
 ![screenshot0017](https://github.com/user-attachments/assets/b9bea606-6f11-48a2-abdf-98b64e4fad5c)
 
-### Version 1.0.1
-This is my first submod... hope you guys enjoy!
+### Version 1.0.3
+
+Bugfixes, tweaked some texts, adjusted some values.
 
 ## Features:
 - A fully playable text-based RPG incorporated into the 'Play' menu!
