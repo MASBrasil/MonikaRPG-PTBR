@@ -1,30 +1,31 @@
 # MonikaRPG
-Gotten bored of the same old Pong, Hangman, Chess, and NOU? Here's an extra RPG minigame for you to play with your Monika!
-This is my first submod... hope you guys enjoy!
+Ficou entediado com os mesmos jogos de sempre, como Pong, Forca, Xadrez e NOU? Aqui está um minigame extra de RPG para você jogar com sua Monika!
+Este é o primeiro submod do criador... espero que vocês aproveitem!
 
 ![screenshot0017](https://github.com/user-attachments/assets/b9bea606-6f11-48a2-abdf-98b64e4fad5c)
 
-### Version 1.0.3
+### Versão 1.0.3
 
-Bugfixes, tweaked some texts, adjusted some values.
+Correções de bugs, ajustes em alguns textos e balanceamento de valores.
 
-## Features:
-- A fully playable text-based RPG incorporated into the 'Play' menu!
-- A complete tutorial to explain all game mechanics.
-- 4 Difficulties; Easy, Normal, Hard, Impossible (What a paradox... Impossible is possible... trust.)
-- Mana system with 6 spells for unique strategies!
-- Gain affection depending on wins or losses (Can't cheat by ending early!)
-- ...and some Easter eggs!
+## Recursos:
 
-## Upcoming Features and Ideas
-- Chibika summoned minion!
-- Extra abilities for Monika!
-- Icons to indicate status effects.
-- Color filters for burn and freeze effects.
-- Give suggestions for what you'd like to see!
+- Um RPG baseado em texto totalmente jogável, incorporado ao menu 'Jogar'!
+- Um tutorial completo para explicar todas as mecânicas do jogo.
+- 4 dificuldades: Fácil, Normal, Difícil, Impossível (Que paradoxo... O impossível é possível... confie.)
+- Sistema de mana com 6 feitiços para estratégias únicas!
+- Ganhe afeição dependendo de vitórias ou derrotas (Não dá para trapacear saindo cedo!)
+- ...e alguns Easter eggs!
 
-## Installation:
-- Fully extract the release .zip file.
-- Navigate to your DDLC installation's /game directory. If this is your first time installing a submod, you should create a new 'Submods' folder. Drag the unzipped folder to the 'Submods' folder and viola!
-- For the best experience, it is recommended that you also install the 'All Gen Scrollable Menus' submod. You can install it from https://github.com/multimokia/MAS-Submod-consistent-menus
-- This mod uses the 'Submod Updater Plugin'! To automatically get new updates for MonikaRPG, please install the plugin at https://github.com/Booplicate/MAS-Submods-SubmodUpdaterPlugin
+## Próximos Recursos e Ideias
+- Chibika invocando como minion!!
+- Habilidades extras para Monika!
+- Ícones para indicar efeitos de status.
+- Filtros de cor para efeitos de queimadura e congelamento.
+- Dê sugestões do que gostaria de ver!
+
+## Instalação:
+- Extraia completamente o arquivo .zip da versão lançada.
+- Navegue até o diretório /game da sua instalação do DDLC. Se esta for sua primeira vez instalando um submod, crie uma nova pasta chamada 'Submods'. Arraste a pasta descompactada para a pasta 'Submods' e pronto!
+- Para a melhor experiência, é recomendado instalar o submod 'All Gen Scrollable Menus'. Você pode baixá-lo em: https://github.com/multimokia/MAS-Submod-consistent-menus
+- Este mod usa o 'Submod Updater Plugin'! Para receber atualizações automáticas do MonikaRPG, instale o plugin em: https://github.com/Booplicate/MAS-Submods-SubmodUpdaterPlugin
