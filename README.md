@@ -18,7 +18,7 @@ Correções de bugs, ajustes em alguns textos e balanceamento de valores.
 - ...e alguns Easter eggs!
 
 ## Próximos Recursos e Ideias
-- Chibika invocando como minion!!
+- Chibika invocado como minion!!
 - Habilidades extras para Monika!
 - Ícones para indicar efeitos de status.
 - Filtros de cor para efeitos de queimadura e congelamento.
