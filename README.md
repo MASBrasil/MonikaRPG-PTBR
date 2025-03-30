@@ -2,7 +2,7 @@
 Ficou entediado com os mesmos jogos de sempre, como Pong, Forca, Xadrez e NOU? Aqui está um minigame extra de RPG para você jogar com sua Monika!
 Este é o primeiro submod do criador... espero que vocês aproveitem!
 
-![screenshot0017](https://github.com/user-attachments/assets/b9bea606-6f11-48a2-abdf-98b64e4fad5c)
+![screenshot0017](https://github.com/MASBrasil/MonikaRPG-PTBR/blob/main/MonikaRPG_v1.0.3/READMEimage_MONIKARPG-PTBR.png)
 
 ### Versão 1.0.3
 
